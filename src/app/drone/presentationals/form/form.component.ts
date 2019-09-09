@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  input
+
   constructor() { }
 
   ngOnInit() {
 
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    console.log(this.input);
   }
 }

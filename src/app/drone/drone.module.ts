@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DroneListItemComponent} from './presentationals/drone-list-item/drone-list-item.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {DroneListItemComponent} from './presentationals/drone-list-item/drone-li
     MatExpansionModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   exports: [
     DroneComponent

@@ -1,8 +1,19 @@
 <form class="form">
   <mat-form-field class="form__input">
-    <input matInput placeholder="Enter a new drone name">
+    <input
+      matInput
+      placeholder="Enter a new drone name"
+      name="droneName"
+      [(ngModel)]="input"
+    >
   </mat-form-field>
-  <button mat-raised-button color="primary">Submit</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onSubmit($event)"
+    >
+      Submit
+  </button>
 </form>
 
 
