@@ -17,7 +17,7 @@ export class ApiService {
 
 
   /**
-   * Handle Http GET operation for all toys.
+   * Handle Http GET operation to fetch all toys.
    * Let the app continue.
    */
   fetchToys(): Observable<ToyInterface[]> {
