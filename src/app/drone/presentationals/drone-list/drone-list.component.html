@@ -1,0 +1,10 @@
+<div class="drone-list" *ngIf="toys">
+  <div class="drone-list__item"
+       *ngFor="let drone of toys"
+  >
+    <app-drone-list-item></app-drone-list-item>
+  </div>
+</div>
+<div class="drone-list" *ngIf="!toys">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
