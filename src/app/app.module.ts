@@ -7,7 +7,7 @@ import { DroneModule } from './drone/drone.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -18,4 +18,5 @@ import { DroneModule } from './drone/drone.module';
   exports: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

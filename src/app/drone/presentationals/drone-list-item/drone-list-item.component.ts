@@ -14,5 +14,4 @@ export class DroneListItemComponent {
   @Input() title: string;
   @Input() body: string;
   @Input() completed: boolean;
-
 }

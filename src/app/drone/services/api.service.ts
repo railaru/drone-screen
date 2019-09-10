@@ -13,7 +13,7 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
