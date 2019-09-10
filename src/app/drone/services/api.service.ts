@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import ToyInterface from '../interfaces/toy.interface';
 import {Observable, of} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
@@ -15,6 +15,23 @@ export class ApiService {
 
   private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
 
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  /**
+   * Handle Http POST operation to add one toy.
+   * Let the app continue.
+   * @param toy - values for the toy to be added.
+   */
+  addToy(toy: ToyInterface): Observable<any> {
+    return this.http.post(this.apiUrl, toy, this.httpOptions).pipe(
+      tap(() => {
+        console.log(`post hero id: ${toy.id}`);
+      }),
+      catchError(this.handleError<any>('postToy'))
+    );
+  }
 
   /**
    * Handle Http GET operation to fetch all toys.
@@ -24,7 +41,7 @@ export class ApiService {
     return this.http.get<ToyInterface[]>(this.apiUrl)
       .pipe(
         tap(() => console.log('fetched toys')),
-        catchError(this.handleError<ToyInterface[]>('getHeroes', []))
+        catchError(this.handleError<ToyInterface[]>('fetchToys', []))
       );
   }
 

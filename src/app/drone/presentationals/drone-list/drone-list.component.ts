@@ -17,8 +17,10 @@ export class DroneListComponent implements OnInit {
     this.getToys();
   }
 
-  getToys(): void {
+  getToys() {
     this.apiService.fetchToys()
-      .subscribe(toys => this.toys = toys);
+      .subscribe(toys => {
+        this.toys = toys;
+      });
   }
 }

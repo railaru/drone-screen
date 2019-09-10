@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../../services/api.service';
+import ToyInterface from '../../interfaces/toy.interface';
 
 @Component({
   selector: 'app-form',
@@ -7,16 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  input: string;
+  input;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
 
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    console.log(this.input);
-  }
+  // add(userId: number, id: number, title: string, completed: boolean): void {
+  //   title = title.trim();
+  //   if (!title) { return; }
+  //   this.apiService.addToy({userId, id, title, completed} as ToyInterface)
+  //     .subscribe(toy => {
+  //       this.toys.push(toy);
+  //     });
+  // }
 }

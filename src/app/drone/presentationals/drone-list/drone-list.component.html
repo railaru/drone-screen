@@ -1,8 +1,12 @@
 <div class="drone-list" *ngIf="toys">
-  <div class="drone-list__item"
-       *ngFor="let drone of toys"
-  >
-    <app-drone-list-item></app-drone-list-item>
+  <div class="drone-list__item" *ngFor="let drone of toys">
+    <app-drone-list-item
+      [id]="drone.id"
+      [userId]="drone.userId"
+      [title]="drone.title"
+      [body]="drone.body"
+    >
+    </app-drone-list-item>
   </div>
 </div>
 <div class="drone-list" *ngIf="!toys">
